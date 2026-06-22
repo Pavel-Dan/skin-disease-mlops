@@ -1,0 +1,39 @@
+[project]
+name = "bloc4-skin-mlops"
+version = "0.1.0"
+description = "Bloc 4 — MLOps pipeline for skin lesion classification"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "albumentations>=2.0.8",
+    "black>=25.9.0",
+    "boto3>=1.40.64",
+    "evidently>=0.4.40",
+    "fastapi>=0.120.4",
+    "flake8>=7.3.0",
+    "httpx>=0.28.0",
+    "isort>=7.0.0",
+    "kaggle>=1.6.17",
+    "minio>=7.2.18",
+    "mlflow>=3.5.1",
+    "numpy>=2.3.4",
+    "opencv-python>=4.11.0.86",
+    "pandas>=2.3.3",
+    "pillow>=12.0.0",
+    "pre-commit>=4.3.0",
+    "pydantic>=2.12.3",
+    "pytest>=8.4.2",
+    "pytest-cov>=7.0.0",
+    "python-dotenv>=1.2.1",
+    "python-multipart>=0.0.20",
+    "scikit-learn>=1.7.2",
+    "seaborn>=0.13.2",
+    "torch>=2.9.0",
+    "torchvision>=0.24.0",
+    "tqdm>=4.67.1",
+    "uvicorn>=0.38.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

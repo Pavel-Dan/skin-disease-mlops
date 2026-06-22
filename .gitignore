@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+logs/
+models/*
+!models/.gitkeep
+data/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/interim/.gitkeep
+.env
+mlruns/
+monitoring/reports/*
+!monitoring/reports/.gitkeep
+k8s/secrets.yaml
+docs/criteres_evaluation.txt
