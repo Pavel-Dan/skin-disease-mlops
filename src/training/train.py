@@ -291,12 +291,14 @@ def main() -> None:
     parser.add_argument("--epochs", type=int, default=EPOCHS)
     parser.add_argument("--batch-size", type=int, default=BATCH_SIZE)
     parser.add_argument("--lr", type=float, default=LEARNING_RATE)
+    parser.add_argument("--no-register", action="store_true", help="Skip MLflow model registry")
     args = parser.parse_args()
     train_model(
         csv_path=args.csv,
         epochs=args.epochs,
         batch_size=args.batch_size,
         learning_rate=args.lr,
+        register_model=not args.no_register,
     )
 
 

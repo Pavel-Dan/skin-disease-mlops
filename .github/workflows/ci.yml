@@ -24,17 +24,24 @@ jobs:
         run: python scripts/generate_demo_data.py --processed-only --processed-per-split 4
 
       - name: Train smoke model
-        run: python -m src.training.train --epochs 1 --batch-size 4
+        run: python -m src.training.train --epochs 1 --batch-size 4 --no-register
         env:
           MLFLOW_TRACKING_URI: sqlite:///mlruns/mlflow.db
+          SKIP_MINIO: "true"
+          MODEL_ARCH: resnet18
 
       - name: Run tests
         run: pytest tests/ -q
         env:
           MLFLOW_TRACKING_URI: sqlite:///mlruns/mlflow.db
+          SKIP_MINIO: "true"
+          MODEL_ARCH: resnet18
 
       - name: Build Docker image
         run: docker build -t skin-api:ci .
+
+      - name: Set up kubectl
+        uses: azure/setup-kubectl@v4
 
       - name: Validate Kubernetes manifests
         run: |
