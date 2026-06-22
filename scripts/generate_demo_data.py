@@ -64,7 +64,7 @@ def main() -> None:
         print(f"Demo raw images written under {RAW_DIR}")
 
     if not args.raw_only:
-        path = generate_processed_manifest(args.processed_per_class)
+        path = generate_processed_manifest(args.processed_per_split)
         print(f"Demo processed manifest written to {path}")
 
 
